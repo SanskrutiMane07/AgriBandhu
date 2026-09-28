@@ -1,0 +1,4 @@
+agribandhu/
+__pycache__/
+*.pyc
+.env

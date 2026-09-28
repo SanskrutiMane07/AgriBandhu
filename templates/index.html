@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AgriBandhu | Smart Farming Assistant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+/* SAME UI — NO CHANGES */
+
+body, html{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    scroll-behavior:smooth;
+}
+
+/* Navbar */
+
+.navbar{
+    background: linear-gradient(90deg,#71ae7f,#81c784);
+}
+
+.navbar-brand{
+    font-weight:700;
+    font-size:1.8rem;
+    color:#fff;
+}
+
+.navbar-nav .nav-link{
+    color:#fff;
+    font-weight:500;
+    transition:color 0.3s;
+}
+
+.navbar-nav .nav-link:hover{
+    color:#ffd700;
+}
+
+/* Hero Section */
+
+.hero{
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    height:110%;
+    width:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeInUp 1s forwards;
+    animation-delay:0.3s;
+}
+
+/* ✅ TEXT FIX ONLY */
+.hero-content h1,
+.hero-content p{
+    color:#fff;
+    text-shadow:2px 2px 8px rgba(0,0,0,0.8);
+}
+
+@keyframes fadeInUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Buttons */
+
+.btn-custom{
+    padding:12px 28px;
+    font-size:18px;
+    border-radius:30px;
+    font-weight:600;
+    transition:all 0.3s;
+}
+
+.btn-success{
+    background-color:#58b56e;
+    border-color:#71ae7f;
+}
+
+.btn-success:hover{
+    background-color:#5f996a;
+    border-color:#5f996a;
+    transform:translateY(-3px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-outline-light:hover{
+    background-color:rgba(255,255,255,0.2);
+}
+
+/* Features */
+
+.features{
+    padding:80px 20px;
+    background:#f8f9fa;
+}
+
+.feature-card{
+    border:none;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    cursor:pointer;
+    opacity:0;
+    transform:translateY(20px);
+    background:#fff;
+    transition:transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.feature-card.visible{
+    opacity:1;
+    transform:translateY(0);
+    transition:all 0.6s ease-out;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    background:#e8f5e9;
+}
+
+.feature-card h5{
+    font-weight:600;
+}
+
+.feature-card p{
+    font-size:0.95rem;
+}
+
+/* Footer */
+
+.footer{
+    background:linear-gradient(90deg,#71ae7f,#81c784);
+    color:white;
+    padding:25px 0;
+    text-align:center;
+}
+
+.footer a{
+    color:#ffd700;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.footer a:hover{
+    color:white;
+    text-decoration:underline;
+}
+.footer i {
+    font-size: 20px;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.footer i:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+}
+
+/* Weather Popup */
+
+.weather-popup{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#58b56e;
+    color:white;
+    padding:12px 18px;
+    border-radius:30px;
+    font-weight:600;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    transition:0.3s;
+    z-index:999;
+}
+
+.weather-popup:hover{
+    transform:scale(1.05);
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    h1.display-4{
+        font-size:2rem;
+    }
+
+    .btn-custom{
+        font-size:16px;
+        padding:10px 22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+<div class="container">
+
+<a class="navbar-brand" href="/">🌾 AgriBandhu</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link active" href="/">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#features">Features</a>
+</li>
+
+{% if session.get('user') %}
+<li class="nav-item">
+<a class="nav-link" href="/logout">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+<a class="nav-link" href="/login">Login</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="/register">Register</a>
+</li>
+{% endif %}
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+<!-- Hero Section -->
+
+<section class="hero d-flex align-items-center justify-content-center text-center">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1 class="display-4 fw-bold">
+Grow Smarter. Harvest Better.
+</h1>
+
+<p class="lead mb-4">
+AgriBandhu helps farmers make smarter farming decisions with crop insights, profit estimation, and step-by-step farming guidance.
+</p>
+
+<div>
+
+<a href="/login" class="btn btn-success btn-custom me-2">
+Login
+</a>
+
+<a href="/register" class="btn btn-outline-light btn-custom">
+Register
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Features (UNCHANGED 🔥) -->
+
+<section id="features" class="features text-center">
+
+<div class="container">
+
+<h2 class="mb-5 fw-bold">
+What We Offer
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card feature-card h-100" onclick="window.location.href='/crop'">
+<div class="card-body">
+<h5 class="card-title">🌱 Smart Crop Selection</h5>
+<p>Find the most profitable crops based on your soil, water, pH, and budget.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card feature-card h-100" onclick="window.location.href='/profit'">
+<div class="card-body">
+<h5 class="card-title">💰 Profit Estimation</h5>
+<p>Calculate expected costs and returns for smarter investment decisions.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card feature-card h-100" onclick="window.location.href='/compare'">
+<div class="card-body">
+<h5 class="card-title">📊 Crop Comparison</h5>
+<p>Compare crops by profit, cost, and duration to maximize your yield.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card feature-card h-100" onclick="window.location.href='/roadmap'">
+<div class="card-body">
+<h5 class="card-title">🛠 Step-by-Step Farming</h5>
+<p>Guidance from land preparation to harvest for optimal results.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card feature-card h-100" onclick="window.location.href='/weather'">
+<div class="card-body">
+<h5 class="card-title">🌦 Weather Alerts</h5>
+<p>Get weather updates and irrigation suggestions for your farm.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card feature-card h-100" onclick="window.location.href='/schemes'">
+<div class="card-body">
+<h5 class="card-title">📜 Government Schemes</h5>
+<p>Explore agricultural schemes and subsidies available for farmers.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 mx-auto">
+<div class="card feature-card h-100" onclick="window.location.href='/chatbot'">
+<div class="card-body">
+<h5 class="card-title">🤖 Chatbot Support</h5>
+<p>Get quick answers to farming questions and guidance.</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="footer">
+
+<div class="container">
+
+<p class="mb-1">
+© 2026 <strong>AgriBandhu</strong>. All rights reserved.
+</p>
+
+<p>
+Follow us on
+<a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-facebook"></i> Facebook
+</a> |
+<a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-twitter-x"></i> Twitter
+</a> |
+<a href="https://www.instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-instagram"></i> Instagram
+</a>
+</p>
+
+</div>
+
+</footer>
+
+<!-- Weather Popup -->
+
+<div class="weather-popup" onclick="window.location.href='/weather'">
+
+<span>🌤</span>
+<span id="temp">Loading...</span>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+const cards=document.querySelectorAll('.feature-card');
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+
+});
+
+},{threshold:0.1});
+
+cards.forEach(card=>observer.observe(card));
+
+/* ✅ WEATHER API ONLY */
+fetch('/get_weather?city=Pune')
+.then(response => response.json())
+.then(data => {
+    document.getElementById("temp").innerText = data.temperature + "°C";
+})
+.catch(() => {
+    document.getElementById("temp").innerText = "Error";
+});
+
+</script>
+
+</body>
+</html>

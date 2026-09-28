@@ -1,0 +1,77 @@
+Perfect 👍 now you’re set to install everything cleanly.
+
+Since your project uses:
+
+Flask
+SQLite (built-in)
+requests
+scikit-learn (for ML model)
+pickle (built-in)
+✅ Step 1: (Recommended) Create Virtual Environment
+
+In your project folder:
+
+py -m venv venv
+
+Activate it:
+
+👉 Windows
+venv\Scripts\activate
+
+You’ll see:
+
+(venv) PS C:\...
+✅ Step 2: Install Required Libraries
+pip install flask requests scikit-learn
+✅ Step 3: Verify Installation
+pip list
+
+You should see:
+
+flask
+requests
+scikit-learn
+✅ Step 4: Run your project
+py app.py
+🔥 BEST PRACTICE (VERY IMPORTANT)
+
+Create a file called:
+
+requirements.txt
+flask
+requests
+scikit-learn
+
+Then on ANY laptop you can just run:
+
+pip install -r requirements.txt
+⚠️ Important for your ML model
+
+You saw this warning earlier:
+
+InconsistentVersionWarning (scikit-learn)
+
+👉 To avoid issues, install SAME version as training:
+
+pip install scikit-learn==1.6.1
+🚀 Optional (better project)
+
+You can also install:
+
+pip install numpy pandas
+💡 Final structure should look like:
+AgriBandhu/
+│
+├── app.py
+├── crops.json
+├── crop_model.pkl
+├── users.db
+├── requirements.txt
+│
+├── templates/
+│   ├── index.html
+│   ├── crop_recommendation.html
+│   ├── crop_comparison.html
+│   └── ...
+│
+└── venv/

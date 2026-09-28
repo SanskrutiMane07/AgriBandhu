@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriBandhu AI Chatbot</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f9fa;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+.main-content{ flex:1; }
+
+/* Navbar */
+.navbar{
+    background: linear-gradient(90deg,#71ae7f,#81c784);
+}
+.navbar-brand{ font-weight:700; font-size:1.8rem; }
+.navbar-nav .nav-link{ color:white; }
+.navbar-nav .nav-link:hover{ color:#ffd700; }
+
+/* Chat UI */
+.chat-container {
+    max-width: 450px;
+    margin: 10px auto;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.chat-header {
+    background: linear-gradient(90deg, #00c853, #1b5e20);
+    color: white;
+    padding: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.quick-box {
+    padding: 8px;
+    text-align: center;
+    background: #f1f8e9;
+}
+
+.quick-box button {
+    font-size: 11px;
+    margin: 2px;
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    padding: 12px;
+    background: #f8f9fa;
+}
+
+.msg-row { display: flex; margin: 8px 0; }
+.user { justify-content: flex-end; }
+.bot { justify-content: flex-start; }
+
+.bubble {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: 14px;
+}
+
+.user .bubble { background: #c8e6c9; }
+.bot .bubble { background: #e0e0e0; }
+
+.time { font-size: 10px; opacity: 0.6; margin-top: 3px; }
+
+.chat-input { display: flex; border-top: 1px solid #ddd; }
+.chat-input input { flex: 1; padding: 12px; border: none; }
+.chat-input button { background: #1b5e20; color: white; border: none; padding: 12px; }
+
+/* Footer */
+footer{
+    background:#71ae7f;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ✅ Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<div class="container">
+
+<a class="navbar-brand" href="/">🌾 AgriBandhu</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="/">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="/#features">Features</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="/chatbot">Chatbot</a>
+</li>
+
+</ul>
+</div>
+
+</div>
+</nav>
+
+<div class="main-content">
+
+<!-- ✅ Chatbot -->
+<div class="chat-container">
+
+<div class="chat-header">
+🌾 AgriBandhu AI (Live Chat Mode)
+</div>
+
+<div class="quick-box">
+<button class="btn btn-success btn-sm" onclick="quickAsk('best crop for my land')">🌾 Crop</button>
+<button class="btn btn-success btn-sm" onclick="quickAsk('fertilizer recommendation')">🧪 Fertilizer</button>
+<button class="btn btn-success btn-sm" onclick="quickAsk('weather forecast')">🌦 Weather</button>
+<button class="btn btn-success btn-sm" onclick="quickAsk('government schemes')">🏛 Schemes</button>
+</div>
+
+<div id="chatBox" class="chat-box">
+<div class="msg-row bot">
+<div class="bubble">
+👋 Hello Farmer!
+I am AgriBandhu AI Assistant 🌾
+Ask me about crops, fertilizer, weather, schemes or profit prediction.
+<div class="time">now</div>
+</div>
+</div>
+</div>
+
+<div class="chat-input">
+<input type="text" id="userInput" placeholder="Type message...">
+<button onclick="sendMessage()">Send</button>
+</div>
+
+</div>
+</div>
+
+<!-- ✅ Footer -->
+<footer>
+© 2026 AgriBandhu | Smart Farming Companion
+</footer>
+
+<script>
+function timeNow(){
+    let t = new Date();
+    return t.getHours() + ":" + t.getMinutes();
+}
+
+function addMessage(text, type){
+    let chatBox = document.getElementById("chatBox");
+
+    let div = document.createElement("div");
+    div.className = "msg-row " + type;
+
+    div.innerHTML = `
+        <div class="bubble">
+            ${text}
+            <div class="time">${timeNow()}</div>
+        </div>
+    `;
+
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+/* ✅ Predefined Chatbot */
+/*
+function botReply(msg){
+
+    msg = msg.toLowerCase();
+
+    if(msg.includes("crop"))
+        return "🌾 Best crops: Wheat, Rice, Maize depending on season.";
+
+    if(msg.includes("fertilizer"))
+        return "🧪 Use NPK fertilizer. Soil testing is recommended.";
+
+    if(msg.includes("weather"))
+        return "🌦 Weather looks moderate. Please check your local forecast.";
+
+    if(msg.includes("scheme"))
+        return "🏛 Govt schemes: PM-KISAN, Crop Insurance, Subsidies available.";
+
+    return "🤖 I didn't understand. Try: crop, fertilizer, weather, schemes.";
+}
+
+function sendMessage(){
+    let input = document.getElementById("userInput");
+    let text = input.value;
+
+    if(text.trim() === "") return;
+
+    addMessage(text, "user");
+    input.value = "";
+
+    setTimeout(() => {
+        let reply = botReply(text);
+        addMessage(reply, "bot");
+    }, 600);
+}*/
+function sendMessage() {
+    let input = document.getElementById("userInput");
+    let text = input.value.trim();
+
+    if (text === "") return;
+
+    addMessage(text, "user");
+    input.value = "";
+
+    fetch("/chat", {  // Ensure this is '/chat' to match @app.route('/chat')
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json" // Must be exactly this
+        },
+        body: JSON.stringify({ message: text })
+    })
+    .then(res => res.json())
+    .then(data => {
+        setTimeout(() => {
+            addMessage(data.reply, "bot");
+        }, 300);
+    })
+    .catch(err => {
+        console.error("Error:", err);
+        addMessage("⚠️ Connection error. Ensure Flask is running.", "bot");
+    });
+}
+function quickAsk(text){
+    document.getElementById("userInput").value = text;
+    sendMessage();
+}
+</script>
+
+</body>
+</html>

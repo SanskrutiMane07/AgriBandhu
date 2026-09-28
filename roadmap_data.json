@@ -1,0 +1,91 @@
+{
+  "wheat": [
+    {"title": "Soil Preparation", "desc": "Deep ploughing followed by leveling to create fine tilth soil."},
+    {"title": "Sowing", "desc": "Sow seeds in rows during November–December using seed drill."},
+    {"title": "Manuring/Fertilizing", "desc": "Apply NPK fertilizers with higher nitrogen content."},
+    {"title": "Irrigation", "desc": "Provide first irrigation after 20–25 days, then at critical stages."},
+    {"title": "Weeding", "desc": "Remove weeds within 30 days using herbicides or manual methods."},
+    {"title": "Harvesting", "desc": "Harvest when grains become hard and golden yellow."},
+    {"title": "Storage", "desc": "Dry grains properly and store in moisture-free containers."}
+  ],
+
+  "rice": [
+    {"title": "Soil Preparation", "desc": "Puddle the field and level properly to retain water."},
+    {"title": "Sowing", "desc": "Transplant seedlings in flooded fields during June–July."},
+    {"title": "Manuring/Fertilizing", "desc": "Apply NPK fertilizers in split doses."},
+    {"title": "Irrigation", "desc": "Maintain 2–5 cm standing water in field."},
+    {"title": "Weeding", "desc": "Control weeds manually or with herbicides in early growth."},
+    {"title": "Harvesting", "desc": "Harvest when grains are mature and yellow."},
+    {"title": "Storage", "desc": "Dry paddy thoroughly before storing to avoid fungus."}
+  ],
+
+  "maize": [
+    {"title": "Soil Preparation", "desc": "Prepare well-drained fertile soil with ploughing."},
+    {"title": "Sowing", "desc": "Sow seeds at proper spacing during warm season."},
+    {"title": "Manuring/Fertilizing", "desc": "Apply nitrogen-rich fertilizers in stages."},
+    {"title": "Irrigation", "desc": "Water during flowering and grain formation stages."},
+    {"title": "Weeding", "desc": "Remove weeds early to avoid nutrient competition."},
+    {"title": "Harvesting", "desc": "Harvest when cobs are dry and kernels are hard."},
+    {"title": "Storage", "desc": "Store dried cobs in cool and dry conditions."}
+  ],
+
+  "sugarcane": [
+    {"title": "Soil Preparation", "desc": "Deep ploughing with addition of organic manure."},
+    {"title": "Sowing", "desc": "Plant cane setts in furrows with proper spacing."},
+    {"title": "Manuring/Fertilizing", "desc": "Apply high nitrogen fertilizers in multiple stages."},
+    {"title": "Irrigation", "desc": "Provide frequent irrigation depending on climate."},
+    {"title": "Weeding", "desc": "Control weeds regularly to avoid yield loss."},
+    {"title": "Harvesting", "desc": "Harvest after 10–12 months when canes mature."},
+    {"title": "Storage", "desc": "Transport quickly to mills to prevent sugar loss."}
+  ],
+
+  "cotton": [
+    {"title": "Soil Preparation", "desc": "Prepare deep black soil with good drainage."},
+    {"title": "Sowing", "desc": "Sow seeds during warm climate using proper spacing."},
+    {"title": "Manuring/Fertilizing", "desc": "Apply balanced fertilizers with micronutrients."},
+    {"title": "Irrigation", "desc": "Provide irrigation during flowering and boll formation."},
+    {"title": "Weeding", "desc": "Remove weeds during early stages."},
+    {"title": "Harvesting", "desc": "Pick cotton when bolls burst open."},
+    {"title": "Storage", "desc": "Store cotton in dry conditions to avoid moisture."}
+  ],
+
+  "soybean": [
+    {"title": "Soil Preparation", "desc": "Prepare well-drained loamy soil with good aeration."},
+    {"title": "Sowing", "desc": "Sow during monsoon season with proper spacing."},
+    {"title": "Manuring/Fertilizing", "desc": "Apply phosphorus fertilizers and bio-fertilizers."},
+    {"title": "Irrigation", "desc": "Usually rainfed, irrigation during dry spells."},
+    {"title": "Weeding", "desc": "Control weeds within first 30 days."},
+    {"title": "Harvesting", "desc": "Harvest when pods turn brown and dry."},
+    {"title": "Storage", "desc": "Store in dry, cool place to prevent spoilage."}
+  ],
+
+  "gram": [
+    {"title": "Soil Preparation", "desc": "Light ploughing with well-drained soil."},
+    {"title": "Sowing", "desc": "Sow seeds in winter season."},
+    {"title": "Manuring/Fertilizing", "desc": "Apply organic manure and phosphorus."},
+    {"title": "Irrigation", "desc": "Minimal irrigation required."},
+    {"title": "Weeding", "desc": "Remove weeds manually at early stage."},
+    {"title": "Harvesting", "desc": "Harvest when pods become dry and hard."},
+    {"title": "Storage", "desc": "Store in dry conditions to prevent pests."}
+  ],
+
+  "groundnut": [
+    {"title": "Soil Preparation", "desc": "Loose sandy soil for better pod development."},
+    {"title": "Sowing", "desc": "Sow seeds with proper spacing."},
+    {"title": "Manuring/Fertilizing", "desc": "Apply calcium and gypsum."},
+    {"title": "Irrigation", "desc": "Regular watering at flowering stage."},
+    {"title": "Weeding", "desc": "Control weeds to avoid yield loss."},
+    {"title": "Harvesting", "desc": "Harvest when leaves turn yellow."},
+    {"title": "Storage", "desc": "Dry pods and store in ventilated area."}
+  ],
+
+  "onion": [
+    {"title": "Soil Preparation", "desc": "Prepare raised beds with fertile soil."},
+    {"title": "Sowing", "desc": "Transplant seedlings carefully."},
+    {"title": "Manuring/Fertilizing", "desc": "Apply nitrogen fertilizers regularly."},
+    {"title": "Irrigation", "desc": "Provide light but frequent irrigation."},
+    {"title": "Weeding", "desc": "Manual weeding required frequently."},
+    {"title": "Harvesting", "desc": "Harvest when tops fall and dry."},
+    {"title": "Storage", "desc": "Store in well-ventilated dry place."}
+  ]
+}

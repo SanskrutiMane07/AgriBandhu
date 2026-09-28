@@ -1,0 +1,88 @@
+{
+  "crop": {
+    "keywords": [
+      "crop", "best crop", "which crop", "what should i grow",
+      "suggest crop", "farming crop", "season crop", "grow what",
+      "best farming crop", "suitable crop"
+    ],
+    "response": "🌾 Crop selection depends on soil type, season, and water availability. You can use AgriBandhu Crop Recommendation system for ML-based prediction. Common crops: Rice, Wheat, Maize, Cotton, Sugarcane."
+  },
+
+  "fertilizer": {
+    "keywords": [
+      "fertilizer", "npk", "manure", "soil nutrients", "best fertilizer",
+      "what fertilizer", "organic fertilizer", "soil health", "compost"
+    ],
+    "response": "🧪 Use NPK fertilizers (Nitrogen, Phosphorus, Potassium) based on soil test. For organic farming, use compost, cow dung, green manure, and biofertilizers."
+  },
+
+  "weather": {
+    "keywords": [
+      "weather", "rain", "temperature", "humidity", "forecast",
+      "climate", "storm", "heat", "monsoon"
+    ],
+    "response": "🌦 Weather is critical for farming decisions. Always check rainfall, humidity, and temperature before irrigation or sowing. Use AgriBandhu Weather module for live updates."
+  },
+
+  "scheme": {
+    "keywords": [
+      "scheme", "government", "subsidy", "loan", "pm kisan",
+      "insurance", "help farmers", "financial support", "yojana"
+    ],
+    "response": "🏛 Major schemes: PM-Kisan Yojana, Pradhan Mantri Fasal Bima Yojana (Crop Insurance), Soil Health Card Scheme, and subsidies on seeds and fertilizers."
+  },
+
+  "profit": {
+    "keywords": [
+      "profit", "income", "earning", "cost", "return",
+      "benefit", "money", "profit calculation"
+    ],
+    "response": "💰 Profit depends on yield, market price, and input cost. Use AgriBandhu Profit Prediction module for accurate calculation."
+  },
+
+  "irrigation": {
+    "keywords": [
+      "irrigation", "water", "watering", "drip", "sprinkler",
+      "how to water", "irrigate"
+    ],
+    "response": "💧 Irrigation depends on crop type. Drip irrigation saves water and increases yield. Avoid overwatering as it reduces soil oxygen."
+  },
+
+  "disease": {
+    "keywords": [
+      "disease", "plant disease", "pest", "insect", "fungus",
+      "leaf spot", "crop disease"
+    ],
+    "response": "🦠 Crop diseases can reduce yield. Common issues include fungal infections, pests, and bacterial spots. Use proper pesticides and monitor crops regularly."
+  },
+
+  "soil": {
+    "keywords": [
+      "soil", "soil type", "ph", "soil test", "land quality",
+      "soil health"
+    ],
+    "response": "🌱 Soil health is key for farming success. Ideal pH is between 6.0–7.5. Always conduct soil testing before selecting crops."
+  },
+
+  "market": {
+    "keywords": [
+      "market", "price", "mandi", "sell crop", "rate",
+      "selling price", "crop price"
+    ],
+    "response": "📈 Crop prices vary in local mandis. Always check current market rates before selling to maximize profit."
+  },
+
+  "hello": {
+    "keywords": [
+      "hello", "hi", "hey", "good morning", "good evening"
+    ],
+    "response": "👋 Hello Farmer! Welcome to AgriBandhu 🌾 I can help you with crops, weather, fertilizer, schemes, and profit prediction."
+  },
+
+  "help": {
+    "keywords": [
+      "help", "what can you do", "features", "support", "options"
+    ],
+    "response": "🤖 I can assist you with: 🌾 Crop selection 🧪 Fertilizer advice 🌦 Weather info 🏛 Government schemes 💰 Profit estimation 💧 Irrigation tips 🦠 Disease guidance"
+  }
+}
