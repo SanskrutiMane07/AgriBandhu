@@ -14,7 +14,7 @@ import os
 API_KEY2 = os.getenv("API_KEY2")
 API_KEY = os.getenv("API_KEY")
 app = Flask(__name__)
-app.secret_key = os.getenv("secret123")
+app.secret_key = os.getenv("SECRET_KEY")
 with open('crops.json') as f:
     crop_data = json.load(f)
 with open('roadmap_data.json') as f:
