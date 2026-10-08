@@ -10,11 +10,11 @@ from reportlab.lib.styles import getSampleStyleSheet
 
 #print("JSON LOADED:", crop_data.keys())
 
-API_KEY2 = "579b464db66ec23bdd000001ca320dbac0094f826f5f72d8e1003bac"
-API_KEY = "af651245481846d1b369500e36ab0865"
-
+import os
+API_KEY2 = os.getenv("API_KEY2")
+API_KEY = os.getenv("API_KEY")
 app = Flask(__name__)
-app.secret_key = "secret123"
+app.secret_key = os.getenv("secret123")
 with open('crops.json') as f:
     crop_data = json.load(f)
 with open('roadmap_data.json') as f:
